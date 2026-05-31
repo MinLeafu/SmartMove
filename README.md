@@ -7,55 +7,43 @@ Real-time bus arrival web app for Singapore, built with React + Express.js + LTA
 ## Prerequisites
 
 - Node.js installed (https://nodejs.org)
-- An LTA DataMall API key (free — register at https://datamall.lta.gov.sg)
 
 ---
 
 ## Setup
 
-### 1. Get your LTA API Key
-1. Go to https://datamall.lta.gov.sg
-2. Click "Request for API Access"
-3. Fill in the form — you'll get a key via email
-
-### 2. Set up the Backend
+### 1. Start the Backend
 
 ```bash
 cd backend
 npm install
-```
-
-Open `server.js` and replace `YOUR_LTA_API_KEY_HERE` with your actual key.
-
-Then run:
-```bash
 npm run dev
 ```
 
 Backend runs on http://localhost:5000
 
-### 3. Set up the Frontend
+### 2. Start the Frontend
 
 In a new terminal:
 
 ```bash
 cd frontend
-npm create vite@latest . -- --template react   # only needed once
+npm create vite@latest . -- --template react
 npm install
 npm run dev
 ```
 
 Frontend runs on http://localhost:5173
 
+Open your browser and go to http://localhost:5173 — you're good to go.
+
 ---
 
 ## How It Works
 
-1. User searches for a bus stop by name or stop code
-2. Frontend calls `GET /api/stops?query=...` on the backend
-3. User selects a stop → frontend calls `GET /api/arrivals?busStopCode=...`
-4. Backend proxies both calls to LTA DataMall and returns cleaned data
-5. Arrival times are shown in minutes with crowding info
+1. Search for a bus stop by name or stop code
+2. Select a stop from the results
+3. See real-time arrival times and crowding info for each bus service
 
 ---
 
@@ -74,18 +62,7 @@ smartmove/
 
 ---
 
-## Extending This
-
-Ideas to improve the app for SummerBuild:
-- Add a map view (Google Maps or Leaflet.js) showing stop locations
-- Save favourite stops to localStorage
-- Show MRT disruption alerts
-- Add crowding heatmap by time of day
-- Mobile-first PWA with push notifications for your bus
-
----
-
 ## Deployment
 
-- Frontend → Vercel (drag and drop the `frontend` folder)
+- Frontend → Vercel (connect your GitHub repo)
 - Backend → Render (free tier, connect your GitHub repo)
