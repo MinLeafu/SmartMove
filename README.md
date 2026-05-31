@@ -6,7 +6,17 @@ Real-time bus arrivals for Singapore. No install required.
 
 ## Usage
 
-Just open `index.html` in a browser.
+**Do not open `index.html` directly** — browsers will block the API calls.
+
+Instead, serve it with Python (comes pre-installed on most computers):
+
+1. Open the folder containing `index.html`
+2. Click the address bar in File Explorer, type `cmd`, press Enter
+3. Run:
+```
+python -m http.server 8000
+```
+4. Open **http://localhost:8000** in your browser
 
 ---
 
@@ -20,4 +30,4 @@ Just open `index.html` in a browser.
 
 ## Deployment
 
-Drag and drop `index.html` into [Vercel](https://vercel.com) or [Netlify](https://netlify.com) to host it online for free.
+Drag and drop `index.html` into [Vercel](https://vercel.com) or [Netlify](https://netlify.com) to host it online for free. It will work once deployed to a proper `https://` domain.

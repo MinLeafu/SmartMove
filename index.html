@@ -81,7 +81,15 @@
 
 <script>
   const API_KEY = "8l+29ucQQDeL6F/EDCIJPA==";
-  const CORS_PROXY = "https://corsproxy.io/?";
+
+  async function ltaFetch(endpoint) {
+    const base = "https://datamall2.mytransport.sg/ltaodataservice/";
+    const res = await fetch(base + endpoint, {
+      headers: { AccountKey: API_KEY }
+    });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  }
 
   function getMinutes(isoString) {
     if (!isoString) return "—";
